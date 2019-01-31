@@ -32,7 +32,7 @@ public class MyUI extends UI {
         final Data[] items = Data.getData();
 
         final Grid<Data> gridWithItemRenderer = new Grid<>(Data.class);
-        gridWithItemRenderer.setWidth("820px");
+        gridWithItemRenderer.setWidth("1060px");
         gridWithItemRenderer.setColumnOrder("id", "name", "description");
         gridWithItemRenderer.setDataProvider(DataProvider.ofItems(items));
         gridWithItemRenderer.getColumn("name").setWidth(220);
@@ -55,6 +55,14 @@ public class MyUI extends UI {
             area.setReadOnly(true);
             return area;
         });
+
+        gridWithItemRenderer.addComponentColumn(data -> {
+           TextArea result = new TextArea("", data.getDescription());
+           result.addStyleName("grid-area");
+           result.setWordWrap(false);
+           result.setReadOnly(true);
+           return result;
+        }).setWidth(250);
 
         gridWithItemRenderer.setBodyRowHeight(50);
 

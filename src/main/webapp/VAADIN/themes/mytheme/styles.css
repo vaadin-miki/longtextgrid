@@ -15086,3 +15086,10 @@ div.v-layout.v-horizontal.v-widget {
 	text-overflow: unset;
 	overflow-x: scroll;
 }
+
+.mytheme .grid-area {
+	font-size: smaller;
+	height: 40px;
+	width: 230px;
+	overflow-x: scroll;
+}
